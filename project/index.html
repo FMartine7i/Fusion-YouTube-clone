@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Xphere</title>
+    <title>Fusion</title>
 </head>
 <body>
     <nav class="flex-nav">
-        <div class="nav-left">
+        <div class="nav-container">
+            <div class="nav-logo flex-div">
+                <img src="resources/menu.png" alt="menu" class="menu">
+                <img src="resources/logo.png" alt="fusion" class="logo">
+            </div>
 
-        </div>
-        <div class="nav-center">
+            <div class="nav-search">
+                <div class="search-box flex-div">
+                    <button type="button" class="search-button">
+                        <img src="resources/search.png" alt="search" class="search">
+                       <!-- <svg width="1.8vw" height="1.8vh" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>search</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-256.000000, -1139.000000)" fill="#ffffff79"> <path d="M269.46,1163.45 C263.17,1163.45 258.071,1158.44 258.071,1152.25 C258.071,1146.06 263.17,1141.04 269.46,1141.04 C275.75,1141.04 280.85,1146.06 280.85,1152.25 C280.85,1158.44 275.75,1163.45 269.46,1163.45 L269.46,1163.45 Z M287.688,1169.25 L279.429,1161.12 C281.591,1158.77 282.92,1155.67 282.92,1152.25 C282.92,1144.93 276.894,1139 269.46,1139 C262.026,1139 256,1144.93 256,1152.25 C256,1159.56 262.026,1165.49 269.46,1165.49 C272.672,1165.49 275.618,1164.38 277.932,1162.53 L286.224,1170.69 C286.629,1171.09 287.284,1171.09 287.688,1170.69 C288.093,1170.3 288.093,1169.65 287.688,1169.25 L287.688,1169.25 Z" id="search" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg> -->
+                    </button>
+                    <input type="text" placeholder="Search" class="search-input">
+                </div>
+            </div>
 
-        </div>
-        <div class="nav-right">
-
+            <div class="nav-user flex-div">
+                <svg style="height: 3vh;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <rect width="24" height="24" fill="none"></rect> <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0195 2.40431C11.6283 2.06184 12.3717 2.06184 12.9805 2.40431L19.9805 6.34181C20.6103 6.69605 21 7.36241 21 8.08496V15.8296C21 16.4661 20.6634 17.0551 20.1151 17.3783L12.8867 21.6382C12.3396 21.9607 11.6604 21.9607 11.1133 21.6382L3.88495 17.3783C3.33659 17.0551 3 16.4661 3 15.8296V8.08496C3 7.36241 3.38972 6.69605 4.01948 6.34181L11.0195 2.40431ZM5.1286 8.13479C5.39937 7.65344 6.00908 7.48272 6.49044 7.75348L12.0002 10.8527L17.5099 7.75348C17.9913 7.48272 18.601 7.65344 18.8718 8.13479C19.1425 8.61615 18.9718 9.22587 18.4904 9.49663L13.0002 12.5849V19C13.0002 19.5523 12.5525 20 12.0002 20C11.4479 20 11.0002 19.5523 11.0002 19V12.5849L5.50992 9.49663C5.02856 9.22587 4.85784 8.61615 5.1286 8.13479Z" fill="#ffffffc9"></path> </g></svg>
+                <svg style="height: 4vh;" fill="#ffffffc9" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M17 10.5V7C17 6.73478 16.8946 6.48043 16.7071 6.29289C16.5196 6.10536 16.2652 6 16 6H4C3.73478 6 3.48043 6.10536 3.29289 6.29289C3.10536 6.48043 3 6.73478 3 7V17C3 17.2652 3.10536 17.5196 3.29289 17.7071C3.48043 17.8946 3.73478 18 4 18H16C16.2652 18 16.5196 17.8946 16.7071 17.7071C16.8946 17.5196 17 17.2652 17 17V13.5L21 17.5V6.5L17 10.5ZM15 16H5V8H15V16Z"></path> <path d="M8.00003 9V15L12.5 12L8.00003 9Z"></path> </g></svg>
+            </div>
         </div>
 
         <div class="border-bottom">
