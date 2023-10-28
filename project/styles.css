@@ -10,6 +10,7 @@
 body{
     background: #272327;
     color: #ffffffc9;
+    font-weight: 200;
 }
 
 .flex-nav{
@@ -66,26 +67,225 @@ body{
 }
 
 .logo{
-    height: 4vh;
-    margin-left: 2rem;
+    height: 3.5vh;
+    margin-left: 2.5rem;
+    z-index: 10;
 }
 
 .menu{
     height: 2vh;
+    margin-left: 1rem;
 }
+
 
 .border-bottom{
     height: 2px;
     width: 100%;
-    background: linear-gradient(45deg, #be06bb, #680ac0, #10e6d4);
-    background-size: 200%;
-    animation: border 2s linear infinite;
+    background: linear-gradient(45deg, #be06bb, #5d0cb9, #9306d4);
+    background-size: 300%;
+    animation: border 5s linear infinite;
 }
 
 @keyframes border{
     0%{
-        
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
     }
 }
 
+/*---------------------------- Sidebar ---------------------------*/
+.sidebar{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 15%;
+    height: 100vh;
+    top: 0;
+    position: fixed;
+    padding-left: 20px;
+    background: #242024;
+    border-bottom: 1px solid #363636;
+    border-right: 1px solid #363636;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 3px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease-in-out;
+}
 
+.sub-menu{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    height: 8vh;
+}
+
+.menu-sidebar{
+    height: 2vh;
+}
+
+.shortcut-links{
+    width: 90%;
+}
+
+.shortcut-links ul li{
+    list-style-type: none;
+    padding: 15px;
+}
+
+.shortcut-links ul li:hover{
+    background: linear-gradient(45deg, #9c0eaf81, #5d0da77c, rgba(136, 10, 194, 0.438));
+    border-radius: 5px;
+    width: 100%;
+}
+
+.shortcut-links a, .li-class{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-wrap: nowrap;
+    color: #ffffff9f;
+}
+
+.shortcut-links p{
+    margin-left: .8rem;
+}
+
+.shortcut-links a:visited{
+    color: #ffffff9f;
+}
+
+.shortcut-icon{
+    height: 25px;
+    fill: #ffffff9f;
+}
+
+.shortcut-links a:active{
+    color: #ffffff9f;
+}
+
+.shortcut-links h3{
+    margin-left: 10px;
+    color: #ffffff9f;
+    font-weight: 400;
+}
+
+.bar{
+    height: 1px;
+    width: 100%;
+    background: #ffffff52;
+    margin: 10px 0 10px 0;
+}
+
+.subscription-list a{
+    display: none;
+}
+
+.show-subs{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.small-sidebar{
+    width: 5vw;
+}
+
+.small-sidebar p{
+    display: none;
+}
+
+.small-sidebar .subscribed{
+    display: none;
+}
+
+.small-sidebar .bar{
+    width: 90%;
+}
+
+.show-subs-list a{
+    text-decoration: none;
+    font-size: .9rem;
+    color: #ffffff9f;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: fit-content;
+    flex-wrap: wrap;
+}
+
+.title-change h3{
+    font-weight: 600;
+}
+
+.show-subs-list a img{
+    height: 33px;
+    border-radius: 50%;
+}
+
+@media (min-width: 1024px) {
+    .small-sidebar {
+      width: 90px;
+    }
+  }
+
+/*---------------------------- Main --------------------------------*/
+
+.main-container{
+    padding: 20px 2% 20px 17%;
+
+}
+
+.list-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 30px;
+    margin-top: 15px; 
+}
+
+.vid-list .thumbnail{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.vid-list .flex-div{
+    align-items: flex-start;
+    margin-top: 7px;
+}
+
+.flex-vid{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.vid-list .flex-vid img{
+    height: 35px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.vid-list a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/*---------------------------- Custom Scrollbar ---------------------------*/
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+    background: #d1e5ff;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#642bff, #ff22e6);
+    border-radius: 5px;
+}
