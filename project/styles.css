@@ -34,6 +34,101 @@ body{
     margin: 2vh 2vh 2vh 2vh;
 }
 
+.user{
+    height: 35px;
+    border-radius: 50%;
+}
+
+.nav-logo{
+    width: 11%;
+}
+
+.v-bar{
+    width: 1px;
+    height: 3vh;
+    background-color: #646266;
+    margin-left: 10px;
+}
+
+.nav-user{
+    width: 12%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.theme-toggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options-container-hidden{
+    display: none;
+}
+
+.options-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 6vh;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    height: 130px;
+    width: 155px;
+    border-radius: 5px;
+    border: 1px solid #75757560;
+    background: linear-gradient(45deg, #00000093, #44444491, #11111191);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.options-container ul{
+    list-style: none;
+    width: 80%;
+}
+
+.options-container li{
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.options-container li:hover{
+    background: linear-gradient(45deg, #7e0dca94, #413b9296, #6d21c494);
+    border-radius: 5px;
+}
+
+.options-container li:active{
+    background: linear-gradient(45deg, #5616a0bd, #149ea8c0, #2188c494);
+}
+
+.dark-mode-box{
+    background: rgb(105, 13, 180);
+    border-radius: 5px;
+}
+
+.options-container svg{
+    height: 30px;
+}
+
+.bar-option{
+    height: 1px;
+    width: 100%;
+    background: #ffffff34;
+}
+
+.options-container p{
+    margin-left: 10px;
+}
+
+.options-container .mode-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    margin: 10px 10px 10px 0;
+}
+
 .search-box{
     position: relative;
     display: flex;
@@ -83,7 +178,7 @@ body{
     width: 100%;
     background: linear-gradient(45deg, #be06bb, #5d0cb9, #9306d4);
     background-size: 300%;
-    animation: border 5s linear infinite;
+    animation: border 4.5s linear infinite;
 }
 
 @keyframes border{
@@ -113,7 +208,7 @@ body{
     border-right: 1px solid #363636;
     border-radius: 0 5px 5px 0;
     box-shadow: 3px 5px 5px 1px rgba(0, 0, 0, 0.2);
-    transition: width 0.3s ease-in-out;
+    transition: width 0.2s ease-in-out;
 }
 
 .sub-menu{
@@ -239,25 +334,58 @@ body{
 
 @media (min-width: 1024px) {
     .small-sidebar {
-      width: 90px;
+        width: 90px;
     }
-  }
+}
 
 /*---------------------------- Main --------------------------------*/
 
 .main-container{
-    padding: 20px 2% 20px 17%;
-
+    padding: 20px 1.5% 20px 17%;
+    transition: .2s ease-in-out;
 }
 
 .list-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    grid-column-gap: 16px;
+    grid-column-gap: 10px;
     grid-row-gap: 30px;
     margin-top: 15px; 
 }
 
+.container-container{
+    height: 302px;
+}
+
+.vid-container{
+    border-radius: 5px;
+    margin: 0 5px 5px 0;
+    height: 100%;
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0px 2px 8px #0000007e;
+}
+
+.vid-list {
+    z-index: 10;
+    height: 99.3%;
+    width: 99.3%;
+    transition: transform 0.5s; 
+    padding: 5px;
+    /*border: 1px solid #5c0883;*/
+    border-radius: 5px;
+    background: linear-gradient(45deg, #151516, #171718);    
+}
+  
+.vid-container:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
 
 .vid-list .thumbnail{
     width: 100%;
@@ -265,28 +393,48 @@ body{
     transition: opacity 0.2s;
 }
 
-.vid-list:hover .thumbnail {
+.vid-container:hover .thumbnail {
     margin-top: 5px;
     transform: scale(0.95); 
 }
 
-.vid-list {
-    transition: transform 0.5s; 
-    padding: 5px;
-    border: 1px solid #5c0883;
-    border-radius: 5px;
-    background: linear-gradient(45deg, #1515166e, #00000098);
-}
-  
-.vid-list:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 2px 8px #0000007e;
-    background: linear-gradient(45deg, #65799b00, #4d1d63);
-    border-radius: 5px;
+
+.vid-container::after{
+    content: '';
+    position: absolute;
+    z-index: 2;
+    visibility: hidden;
+    width: 450px;
+    height: 450px;
+    animation: animate 4s linear infinite;
+    background-image: conic-gradient(transparent, transparent, transparent, #6a12dd);
+    animation-delay: -2s;
 }
 
-.vid-container{
-    height: 320px;
+.vid-container::before{
+    content: '';
+    position: absolute;
+    z-index: 2;
+    visibility: hidden;
+    width: 450px;
+    height: 450px;
+    animation: animate 4s linear infinite;
+    background-image: conic-gradient(transparent, transparent, transparent, #a913ee);
+}
+
+.vid-container:hover::before,
+.vid-container:hover::after {
+    visibility: visible;
+}
+
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
 
 .vid-list .flex-div{
@@ -317,6 +465,10 @@ body{
     font-size: .95rem;
 }
 
+.vid-list p{
+    font-size: .95rem;
+}
+
 .vid-info a{
     overflow: hidden; 
     max-lines: 2;
@@ -326,9 +478,44 @@ body{
     text-overflow: ellipsis;
 }
 
+/* --------------------------- Play video ---------------------------------*/
+.play-container{
+    padding-left: 2%;
+    margin-top: 1%;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.play-video{
+    flex-basis: 69%;
+}
+
+.right-sidebar{
+    flex-basis: 30%;
+}
+
+.play-video video{
+    width: 100%;
+    border-radius: 10px;
+}
+
+video::-webkit-media-controls-play-button {
+    background: #7b15ce;
+}
+
+video::-webkit-media-controls-timeline {
+    background: #7b15ce;
+}
+
+
+
 /*---------------------------- Custom Scrollbar ---------------------------*/
 ::-webkit-scrollbar{
-    width: 1vw;
+    width: 11px;
 }
 
 ::-webkit-scrollbar-track{
@@ -337,4 +524,9 @@ body{
 
 ::-webkit-scrollbar-thumb{
     background: linear-gradient(#540bb3, #9e08c4);
+}
+
+::-webkit-scrollbar-thumb::before{
+    background: linear-gradient(#540bb3, #9e08c4);
+    filter: blur(30px);
 }
