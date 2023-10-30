@@ -1,0 +1,267 @@
+:root{
+    --x: 45deg;
+}
+
+.play-container{
+    padding-left: 2%;
+    margin-top: 1%;
+    z-index: 10;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.play-video{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.right-sidebar{
+    flex-basis: 30%;
+}
+
+.video-box{
+    flex-basis: 69%;
+}
+
+.play-video video{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.video-filtered{
+    filter: grayscale(10%) brightness(110%) contrast(120%);
+}
+
+.blur-overlay{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../resources/HS_video-background.png);
+    width: 100%;
+    height: 100%;
+    filter: blur(50px);
+    border-radius: 10px; 
+    z-index: -1;
+}
+
+.controls-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+    padding-bottom: 3vh;
+    background: linear-gradient(to top, #000000f3, #000000a2,transparent);
+    border-radius: 0 0 10px 10px;
+}
+
+.buttons{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons button:active{
+    background: linear-gradient(45deg, #6d12c2be, #0e519ebe, #0fa1c5b9);
+}
+
+.btn__style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border-radius: 10px;
+    height: 35px;
+    width: 35px;
+    border: none;
+}
+
+.btn__group{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn__group button{
+    margin-left: 1rem;
+}
+
+.settings__btn i{
+    position: absolute;
+    inset: -2px;
+    display: block;
+    border-radius: 10px;
+}
+
+.settings__btn:hover i, .settings__btn:hover i:nth-child(2){
+    border-radius: 3px;
+    background: linear-gradient(var(--x), #9708bb, #2424249d, #2424249d, #6c1ec5);
+}
+
+.settings__btn:hover i:nth-child(2){
+    filter: blur(10px);
+}
+
+.settings__btn:hover svg{
+    position: absolute;
+    background: #1b1b1b6b;
+}
+
+.mini-icons{
+    padding: 20%;
+}
+
+.fullscreen_icon{
+    height: 50%;
+}
+
+.theater__btn{
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+.theater__btn span{
+    margin-left: .5rem;
+    display: none;
+}
+
+.theater__btn:hover{
+    width: 13.5vh;
+}
+
+.theater__btn:hover span{
+    display: block;
+}
+
+.volume__btn:hover{
+    width: 15vh;
+}
+
+.btn__style:hover, .theater__btn:hover{
+    /*background: linear-gradient(45deg, #9708bb, #5d0aa1);*/
+    transform: scale(1.05);
+}
+
+
+.play_icon, .pause_icon{
+    height: 75%;
+    background: transparent;
+    fill: linear-gradient(to right, #a21ad8, #1e61c5);
+}
+
+.pause_icon{
+    display: none;
+    height: 60%;
+}
+
+#volume-on{
+    display: block;
+}
+
+#volume-off{
+    display: none;
+}
+
+.volume__slider{
+    display: none;
+    margin-left: 10px;
+    width: 10vh;
+    background: #2a282b;
+    transition: .3s ease-in-out;
+}
+
+.volume__btn:hover .volume__slider{
+    display: block;
+}
+
+.progress-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 95%;
+    height: 10px;
+    border-radius: 3px;
+    background-color: #323033;
+    margin-bottom: 10px;
+    overflow: hidden; 
+    z-index: -2;
+}
+
+.progress__filled{
+    margin: 2px;
+    width: 0;
+    height: 80%;
+    background: linear-gradient(to right, #a21ad8, #4760ec);
+    border-radius: 3px;
+}
+
+.progress__blur {
+    position: absolute;
+    width: 0;
+    height: 15%;
+    background: linear-gradient(to right, #a21ad8, #4a3adb);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    z-index: -1;
+  }
+
+.side-video-list{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 8px 8px 8px;
+}
+
+.side-video-list img{
+    border-radius: 5px;
+    width: 100%;
+}
+
+.side-video-list .small__thumbnail{
+    flex-basis: 49%;
+}
+
+.side-video-list .vid-info{
+    flex-basis: 49%;
+}
+
+.video__info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.info__btns{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info__btns button{
+    background: transparent;
+    display: flex;
+    align-items: center;
+    border: none;
+    height: 30px;
+}
+
+.info__btns button .btn__info{
+    height: 100%;
+}
+
+.info__btns button .like__btn{
+    height: 90%;
+}

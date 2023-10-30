@@ -62,4 +62,3 @@ darkModeBtn.addEventListener('click', () => {
         vidList.style.background = "#151516";
     });
 })
-

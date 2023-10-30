@@ -459,8 +459,6 @@ body{
 }
 
 .vid-list a{
-    color: #ffffff;
-    text-decoration: none;
     font-weight: 300;
     font-size: .95rem;
 }
@@ -470,6 +468,8 @@ body{
 }
 
 .vid-info a{
+    color: #ffffff;
+    text-decoration: none;
     overflow: hidden; 
     max-lines: 2;
     -webkit-line-clamp: 2;
@@ -477,40 +477,6 @@ body{
     display: -webkit-box;  
     text-overflow: ellipsis;
 }
-
-/* --------------------------- Play video ---------------------------------*/
-.play-container{
-    padding-left: 2%;
-    margin-top: 1%;
-}
-
-.row{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.play-video{
-    flex-basis: 69%;
-}
-
-.right-sidebar{
-    flex-basis: 30%;
-}
-
-.play-video video{
-    width: 100%;
-    border-radius: 10px;
-}
-
-video::-webkit-media-controls-play-button {
-    background: #7b15ce;
-}
-
-video::-webkit-media-controls-timeline {
-    background: #7b15ce;
-}
-
 
 
 /*---------------------------- Custom Scrollbar ---------------------------*/
