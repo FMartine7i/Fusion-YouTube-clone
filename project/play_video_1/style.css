@@ -99,23 +99,25 @@
     margin-left: 1rem;
 }
 
-.settings__btn i{
-    position: absolute;
-    inset: -2px;
+.btn__style i{
+    width: 40px;
+    height: 40px;
     display: block;
+    position: absolute;
     border-radius: 10px;
 }
 
-.settings__btn:hover i, .settings__btn:hover i:nth-child(2){
+.btn__style:hover i, .¿.btn__style:hover i:nth-child(2){
     border-radius: 3px;
-    background: linear-gradient(var(--x), #9708bb, #2424249d, #2424249d, #6c1ec5);
+    background: linear-gradient(var(--x), #7c07b3, #2424249d, #2424249d, #6c1ec5);
 }
 
-.settings__btn:hover i:nth-child(2){
+
+.btn__style:hover i:nth-child(2){
     filter: blur(10px);
 }
 
-.settings__btn:hover svg{
+.btn__style:hover svg{
     position: absolute;
     background: #1b1b1b6b;
 }
@@ -237,6 +239,20 @@
     flex-basis: 49%;
 }
 
+/*------------------------------------ video description -----------------------------------------*/
+
+.video-box h2{
+    margin: 10px 0 2px 0;
+}
+
+.tags{
+    display: flex;
+}
+
+.tags p{
+    margin-right: 10px;
+}
+
 .video__info{
     display: flex;
     align-items: center;
@@ -253,15 +269,174 @@
 .info__btns button{
     background: transparent;
     display: flex;
+    justify-content: center;
     align-items: center;
     border: none;
-    height: 30px;
+    height: 40px;
+    border-radius: 5px;
 }
 
-.info__btns button .btn__info{
-    height: 100%;
+.info__btns button:hover{
+    box-shadow: 1px 1px 10px 2px #0000004f;;
+    transform: scale(1.05);
 }
 
-.info__btns button .like__btn{
-    height: 90%;
+.stroke{
+    stroke: #e5dbeed5;
+}
+
+.info__btns button .add__fill{
+    fill: #e5dbeed5;
+}
+
+.info__btns button:hover .add__fill{
+    fill: #9b14e9d5;
+}
+
+.info__btns button:hover .stroke{
+    stroke: #9b14e9d5;
+}
+
+.info__btns button:Active svg{
+    transform: scale(1.05);
+}
+
+.info__btns button:nth-child(1):active .like__icon .stroke{
+    stroke:#16a5e7;
+    fill: #16a5e7;
+}
+
+.info__btns button:nth-child(2):active .like__icon .stroke{
+    stroke: #e232a7;
+    fill: #e232a7;
+}
+
+.info__btns button:active .add__fill{
+    stroke:#9b14e9d5;
+    fill: #a74ddbd5;
+}
+
+.info__btns button:active .btn__info .stroke{
+    stroke:#9b14e9d5;
+    fill: #9b14e9d5;
+}
+
+.info__btns .btn__info{
+    width: 65%;
+}
+
+.info__btns .like__icon{
+    width: 50%;
+}
+
+.blur_btn{
+    display: none;
+}
+
+.info__btns button:hover .blur_btn{
+    display: flex;
+    position: absolute;
+    filter: blur(5px);
+    color: #bd3ae6;
+}
+
+.active__btn{
+    stroke:#9b14e9d5;
+    fill: #9b14e9d5;
+}
+
+.stroke__clicked{
+    display: none;
+    position: absolute;
+    z-index: 10;
+
+    stroke:#16a5e7;
+    fill: #16a5e7;
+}
+
+/*------------------------- Comment section --------------------------*/
+.input__comment{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0 10px 0;
+}
+
+.comment__input {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    resize: vertical;
+    font-weight: 200;
+}
+
+.comments__container .comment__input{
+    height: 6vh;
+    background: #0f0f0f;
+    border: none;
+    border-bottom: 1px solid #535353b9;
+    border-radius: 5px 5px 0 0;
+    color: rgb(175, 175, 175);
+    font-size: .9rem;
+    padding: 5px 5rem 5px 5px;
+    outline: none;
+    min-height: 2rem;
+}
+
+.comments__container .comment__input:focus{
+    border-bottom: 2px solid #818181b9;
+}
+
+.comment-buttons{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.comment-buttons button{
+    height: 50px;
+    width: 100px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #1e1b1f;
+    color: #fff;
+}
+
+.comment-buttons button:active{
+    transform: scale3d(0.95, 1.05, 0.95);
+    box-shadow: 1px 2px 5px #0000004f;
+}
+
+.comments__container ul{
+    color: #fff;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.comments__container ul li{
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.emoji{
+    height: 25px;
+    position: absolute;
+    z-index: 10;
+    right: 32%;
+}
+
+.emoji:active{
+ transform: scale(1.05);
+}
+
+.none{
+    display: none;
 }

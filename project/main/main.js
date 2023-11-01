@@ -13,6 +13,10 @@ const toggleTheme = document.querySelector('.options-container-hidden')
 const toggleButton = document.querySelector('.theme-toggle')
 const lightModeBtn = document.querySelector('.light-mode-box')
 const darkModeBtn = document.querySelector('.dark-mode-box')
+const shortCutLinks = document.querySelector('.shortcut-links')
+const aLinks = document.querySelectorAll('a')
+
+const searchInput = document.querySelector('.search-input')
 
 
 // events
@@ -44,7 +48,14 @@ lightModeBtn.addEventListener('click', () => {
     navBar.style.background = "transparent"
     sidebar.style.border = "none"
     sidebar.style.background = "#f0f0f0"
-    
+
+    searchInput.style.background = "#fff"
+    searchInput.style.color = "#242024"
+
+    aLinks.forEach((aLink) => {
+        aLink.style.color = "#242024"
+    })
+
     vidLists.forEach((vidList) => {
         vidList.style.background = "#e0e0e0";
     });

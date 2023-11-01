@@ -25,7 +25,21 @@ let isMuted = false;
 let lastVolume = 1;
 
 // buttons
-const btn = document.querySelector('.settings__btn')
+const btns = document.querySelectorAll('.btn__style')
+const likeBtn = document.querySelector('.like__btn')
+const dislikeBtn = document.querySelector('.dislike__btn')
+
+// comments
+const commentInput = document.querySelector('.comment__input');
+const commentLine = document.querySelector('.comments-list')
+const sendBtn = document.querySelector('.send__comment')
+const comments = []
+
+/*---------------------------- info video buttons ---------------------------*/
+const likeIcon = document.querySelector('.main__like')
+const likeClicked = document.querySelector('.stroke__clicked');
+const likeBlur = document.querySelector('.blur_btn');
+
 
 
 //theater mode
@@ -70,26 +84,66 @@ video.addEventListener('click', () => {
     }
 })
 
+
 document.addEventListener('keydown', (e) => {
-    if(e.key === 'ArrowLeft'){
+    if(commentInput === document.activeElement){
+        // No hace nada. Las teclas tienen su función default si la caja de comentarios está seleccionada
+    }
+    else{
+      if(e.key === 'ArrowLeft'){
         video.currentTime -= 5;
-    }
-    else if(e.key === 'ArrowRight'){
-        video.currentTime += 5;
-    }
-    else if(e.key === ' '){
-        e.preventDefault();
-        
-        if(video.paused){
-            video.play()
-            playIcon.style.display = "none"
-            pauseIcon.style.display = "block"
         }
-        else{
-            video.pause();
-            playIcon.style.display = "block"
-            pauseIcon.style.display = "none"
+        else if(e.key === 'ArrowRight'){
+            video.currentTime += 5;
         }
+        else if(e.key === ' '){
+            if(video.paused){
+                video.play()
+                playIcon.style.display = "none"
+                pauseIcon.style.display = "block"
+            }
+            else{
+                video.pause();
+                playIcon.style.display = "block"
+                pauseIcon.style.display = "none"
+            }
+            e.preventDefault();       
+        }  
+    }  
+})
+
+
+const cancelBtn = document.querySelector('.cancel__btn')
+cancelBtn.disabled = true;
+
+cancelBtn.addEventListener('click', () => {
+    alert('cancelar')
+    console.log('cancelar')
+})
+
+function enableCancelBtn(){
+    if(commentInput.value.trim() === '' || cancelBtn.disabled === true){
+        cancelBtn.disabled = true;
+        cancelBtn.removeAttribute()
+        cancelBtn.style.background = "gray"
+    }
+    else{
+        cancelBtn.disabled = false;
+    }
+}
+
+
+const hardcodedNickname = 'anon';
+
+sendBtn.addEventListener('click', () => {
+    if(commentInput.value !== ''){
+        const newComment = `<span class='nickname'>${hardcodedNickname}:</span> ${commentInput.value}`;
+        comments.push(newComment) // Agregar el comentario al array
+        commentInput.value = '' // Limpiar el campo de entrada
+        displayComments(); // Actualizar la lista de comentarios
+    }
+    else{
+        alert('No se ha ingresado ningún comentario')
     }
 })
 
@@ -160,11 +214,43 @@ volumeOnIcon.addEventListener('click', () => {
     volumeOnIcon.style.display = "none"
 })
 
-btn.addEventListener('mousemove', e => {
-    let rect = e.target.getBoundingClientRect()
-    let x = e.clientX - rect.left
-    btn.style.setProperty('--x', x + 'deg')
+btns.addEventListener('mousemove', e => {
+    btns.forEach(btn => {
+        let rect = e.target.getBoundingClientRect()
+        let x = e.clientX - rect.left
+        btn.style.setProperty('--x', x + 'deg')
+    }) 
 })
+
+likeBtn.addEventListener('click', () => {
+    console.log('like')
+    if(likeBtn.clicked){
+        likeBtn.clicked = false;
+        likeIcon.style.display = 'flex';
+        likeClicked.style.display = 'none';
+        likeBlur.style.display = 'none';
+    } 
+    else {
+        likeBtn.clicked = true;
+        likeIcon.style.display = 'none';
+        likeClicked.style.display = 'flex';
+        likeBlur.style.display = 'flex';
+    }
+})
+
+
+function displayComments(){
+    commentLine.innerHTML = ''
+
+    comments.forEach((comment => {
+        const listItem = document.createElement('li')
+        listItem.textContent = comment
+        commentLine.appendChild(listItem)
+    }))
+}
+
+
+
 
 /* -------------------- Fullscreen ---------------- */ 
 const fullscreenButton = document.querySelector('.screen__btn')

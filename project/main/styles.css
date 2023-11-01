@@ -135,14 +135,9 @@ body{
     align-items: center;
 }
 
-.search{
-    height: 1.8vh;
-    margin: 10px;
-}
-
 .search-input{
-    height: 4vh;
-    width: 30vw;
+    height: 2.5rem;
+    width: 30rem;
     background-color: #1d1a1d;
     border: 1px solid #443f44;
     border-radius: 5px;
@@ -152,13 +147,21 @@ body{
 }
 
 .search-button{
-    height: 4vh;
+    height: 2.5rem;
+    width: 2.5rem;
     position: absolute;
     left: 0;
     background: none;
     border: none;
     cursor: pointer;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search{
+    height: 45%;
 }
 
 .logo{
@@ -288,6 +291,7 @@ body{
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 .small-sidebar{
@@ -325,7 +329,7 @@ body{
     border-radius: 50%;
 }
 
-.sidebar .subscribed a{
+.sidebar .subscribed a, .show-subs h3{
     text-overflow: ellipsis;
     white-space: nowrap; 
     overflow: hidden;
