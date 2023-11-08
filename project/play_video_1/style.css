@@ -194,7 +194,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 95%;
-    height: 10px;
+    height: 11px;
     border-radius: 3px;
     background-color: #323033;
     margin-bottom: 10px;
@@ -205,7 +205,7 @@
 .progress__filled{
     margin: 2px;
     width: 0;
-    height: 80%;
+    height: 65%;
     background: linear-gradient(to right, #a21ad8, #4760ec);
     border-radius: 3px;
 }
