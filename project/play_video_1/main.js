@@ -135,6 +135,16 @@ function enableCancelBtn(){
 
 const hardcodedNickname = 'anon';
 
+function displayComments(){
+    commentLine.innerHTML = ''
+
+    comments.forEach((comment => {
+        const listItem = document.createElement('li')
+        listItem.textContent = comment
+        commentLine.appendChild(listItem)
+    }))
+}
+
 sendBtn.addEventListener('click', () => {
     if(commentInput.value !== ''){
         const newComment = `<span class='nickname'>${hardcodedNickname}:</span> ${commentInput.value}`;
@@ -238,20 +248,6 @@ likeBtn.addEventListener('click', () => {
     }
 })
 
-
-function displayComments(){
-    commentLine.innerHTML = ''
-
-    comments.forEach((comment => {
-        const listItem = document.createElement('li')
-        listItem.textContent = comment
-        commentLine.appendChild(listItem)
-    }))
-}
-
-
-
-
 /* -------------------- Fullscreen ---------------- */ 
 const fullscreenButton = document.querySelector('.screen__btn')
 
@@ -294,4 +290,3 @@ document.addEventListener('fullscreenchange', () => {
         // El modo de pantalla completa se ha desactivado
     }
 });
-
