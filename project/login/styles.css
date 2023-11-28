@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: rgb(42, 40, 43);
+    color: #fff;
+    font-weight: 300;
+}
+
+nav{
+    height: 5vh;
+}
+
+h1{
+    font-weight: 300;
+    font-size: 2rem;
+    margin-left: 1rem;
+    background: linear-gradient(45deg, rgb(120, 109, 243), rgb(151, 16, 200));
+    color: transparent;
+    background-clip: text;
+    background-size: 200%;
+    -webkit-background-clip: text;
+    animation: text 2.5s linear infinite;
+}
+
+h1 span{
+    font-size: 1.5rem;
+}
+
+@keyframes text{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+main{
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2{
+    font-weight: 300;
+    margin-top: 3rem;
+    font-size: 2rem;
+}
+.container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 528px;
+    max-width: 100%;
+    min-height: 680px;
+    background: rgba(35, 32, 37, 0.87);
+    border-radius: 5px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0px 5px 15px #000000b0;
+}
+
+/* --------------------------------- Form --------------------------------- */
+.form_container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.sign_up, .login{
+    width: 100%;
+    flex: 1;
+    transition: transform 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.sign_up{
+    transform: translateX(100%);
+}
+
+.login{
+    transform: translate(-100%);
+}
+
+.active {
+    transform: translateX(0%);
+    pointer-events: all;
+}
+
+.container form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+/* --------------------------------- Inputs --------------------------------- */
+.form_container .input_field{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form_container input{
+    height: 50px;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    color: rgb(201, 197, 203);
+    background: rgb(25, 23, 26);
+    border-radius: 5px;
+    padding-left: 2.5rem;
+}
+
+.container input:focus{
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #A52AFF;
+    background: rgb(45, 41, 53);
+}
+
+
+.input_field{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.form_svg{
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+
+.open_eye{
+    display: none;
+}
+
+.eye_blink{
+    display: block;
+}
+
+.check{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.check label{
+    margin-left: 10px;
+}
+
+/* --------------------------------- Buttons --------------------------------- */
+.btn__container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn__container button{
+    height: 50px;
+    margin-top: 10px;
+    border: none;
+    color: #fff;
+    font-size: .95rem;
+    cursor: pointer;
+    transition: width .3s ease-in-out;
+}
+
+.btn__container button:nth-child(1){
+    background: #8110c8;
+
+    width: 100%;
+}
+
+.btn__container button:nth-child(2){
+    width: 48%;
+    color: #b0aeae;
+    background: transparent;
+    border: 1px solid #b0aeae;
+}
+
+.btn__container button:nth-child(3){
+    width: 48%;
+    color: #b0aeae;
+    background: transparent;
+    border: 1px solid #b0aeae;
+    margin-left: 2%;
+}
+
+.btn__container button:active{
+    transform: scale3D(0.95, 0.98, 0.95);
+}
+
+.btn__box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn__box svg{
+    margin: 10px;
+}
+
+.redirect{
+    margin: 10px 0 2rem 0;
+    color: #838383;
+}
+
+.redirect span{
+    color: #685AFF;
+}
+
+.redirect span:hover{
+    color: #A52AFF;
+}
+
+.redirect span:active{
+    font-size: .92rem;
+    cursor: pointer;
+}
+
+/* --------------------------------- Background blob --------------------------------- */
+.blob{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: -1;
+}
+
+.blob svg{
+    height: 80%;
+}
