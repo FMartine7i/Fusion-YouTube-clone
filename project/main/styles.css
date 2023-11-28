@@ -8,7 +8,7 @@
 }
 
 body{
-    background: #272327;
+    background: #1d1a1d;
     color: #ffffffc9;
     font-weight: 200;
 }
@@ -17,7 +17,7 @@ body{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background:#00000028;
+    background:rgb(28, 26, 28);
 }
 
 .nav-container{
@@ -39,10 +39,6 @@ body{
     border-radius: 50%;
 }
 
-.nav-logo{
-    width: 11%;
-}
-
 .v-bar{
     width: 1px;
     height: 3vh;
@@ -51,7 +47,7 @@ body{
 }
 
 .nav-user{
-    width: 12%;
+    width: 15%;
     display: flex;
     justify-content: space-between;
 }
@@ -75,7 +71,7 @@ body{
     position: absolute;
     z-index: 10;
     height: 130px;
-    width: 155px;
+    width: 145px;
     border-radius: 5px;
     border: 1px solid #75757560;
     background: linear-gradient(45deg, #00000093, #44444491, #11111191);
@@ -85,7 +81,7 @@ body{
 
 .options-container ul{
     list-style: none;
-    width: 80%;
+    width: 90%;
 }
 
 .options-container li{
@@ -129,6 +125,12 @@ body{
     margin: 10px 10px 10px 0;
 }
 
+.nav-search{
+    width: 55%;
+    display: flex;
+    justify-content: flex-start;
+}
+
 .search-box{
     position: relative;
     display: flex;
@@ -137,13 +139,25 @@ body{
 
 .search-input{
     height: 2.5rem;
-    width: 30rem;
+    width: 2.5rem;
     background-color: #1d1a1d;
-    border: 1px solid #443f44;
+    border: 1px solid #2a262a;
     border-radius: 5px;
     color: #ffffffb7;
-    padding-left: 35px;
+    padding-left: 2.5rem;
     z-index: 1;
+    transition: width .7s linear;
+    outline: none;
+}
+
+.search-box:hover .search-input{
+    width: 30rem;
+}
+
+.search-input:focus{
+    width: 30rem;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #905AFF;
 }
 
 .search-button{
@@ -164,24 +178,70 @@ body{
     height: 45%;
 }
 
-.logo{
-    height: 3.5vh;
-    margin-left: 2.5rem;
-    z-index: 10;
-}
-
 .menu{
-    height: 2vh;
     margin-left: 1rem;
 }
 
+.menu div{
+    width: 35px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu span{
+    background: rgb(91, 88, 91);
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.menu .line_1{
+    transform: translate(-50%, 0) rotate(-45deg);
+}
+
+.menu .line_2{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu .line_3{
+    transform: translate(-50%, 0) rotate(-45deg);
+}
+
+.open__menu .line_1{
+    width: 50%;
+    transform: translate(-100%, -10px) rotate(0);
+}
+
+.open__menu .line_2{
+    transform: translate(-50%, 0) rotate(0);
+}
+
+.open__menu .line_3{
+    width: 50%;
+    transform: translate(0, 10px) rotate(0);
+} 
 
 .border-bottom{
     height: 2px;
     width: 100%;
-    background: linear-gradient(45deg, #be06bb, #5d0cb9, #9306d4);
+}
+
+.border-bottom, .logo{
+    background: linear-gradient(45deg, #b237eb, #802fdc, #8449f9);
     background-size: 300%;
     animation: border 4.5s linear infinite;
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 @keyframes border{
@@ -202,15 +262,15 @@ body{
     justify-content: flex-start;
     flex-wrap: wrap;
     width: 15%;
-    height: 100vh;
-    top: 0;
+    height: 100%;
     position: fixed;
     padding-left: 20px;
-    background: #242024;
+    /* 
     border-bottom: 1px solid #363636;
     border-right: 1px solid #363636;
-    border-radius: 0 5px 5px 0;
-    box-shadow: 3px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0 5px 5px 0;*/
+    background:rgb(32, 29, 32);
+    box-shadow: 3px 5px 5px 1px rgba(0, 0, 0, 0.2); 
     transition: width 0.2s ease-in-out;
 }
 
@@ -231,14 +291,24 @@ body{
     width: 90%;
 }
 
+.shortcut-links .br{
+    height: 2rem;
+}
+
 .shortcut-links ul li{
     list-style-type: none;
     padding: 15px; 
 }
 
-.shortcut-links ul li:hover{
-    background: linear-gradient(45deg, #9c0eaf81, #5d0da77c, rgba(136, 10, 194, 0.438));
-    border-radius: 5px;
+.shortcut-links ul:not(:last-child) li:hover{
+    background: linear-gradient(45deg, rgba(49, 49, 49, 0.272), rgba(109, 109, 109, 0.116));
+    border-radius: 3px;
+    width: 100%;
+}
+
+.shortcut-links .first__ul li:nth-child(1){
+    background: linear-gradient(45deg, #3d3d3d94, #44444453);
+    border-radius: 3px;
     width: 100%;
 }
 
@@ -283,14 +353,21 @@ body{
     margin: 10px 0 10px 0;
 }
 
+.subscription-list{
+    margin-left: 2rem;
+}
+
 .subscription-list a{
     display: none;
+}
+
+.subscription-list a:active{
+    transform: scale(1.05);
 }
 
 .show-subs{
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
     overflow: hidden;
 }
 
@@ -349,6 +426,37 @@ body{
     transition: .2s ease-in-out;
 }
 
+.banner img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.banner .close__btn{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 10;
+    right: 2.5rem;
+    margin-top: 10px;
+    border: none;
+    box-shadow: 0px 2px 8px #0000007e;
+    background: rgb(204, 183, 213)
+}
+
+.x__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.banner .close__btn:active{
+    transform: scale(0.95);
+    transition: scale .2s ease-in-out;
+}
+
 .list-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -377,29 +485,36 @@ body{
 
 .vid-list {
     z-index: 10;
-    height: 99.3%;
-    width: 99.3%;
+    height: 100%;
+    width: 100%;
     transition: transform 0.5s; 
     padding: 5px;
     /*border: 1px solid #5c0883;*/
     border-radius: 5px;
-    background: linear-gradient(45deg, #151516, #171718);    
+    background: #2d2d2e;    
+
 }
   
 .vid-container:hover {
     transform: scale(1.05);
-    z-index: 2;
+    transition: transform 0.3s;
+}
+
+.img_container{
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .vid-list .thumbnail{
     width: 100%;
+    height: auto;
     border-radius: 5px;
-    transition: opacity 0.2s;
+    transition: transform 0.5s ease-in-out;
 }
 
 .vid-container:hover .thumbnail {
     margin-top: 5px;
-    transform: scale(0.95); 
+    transform: scale(1.1); 
 }
 
 
@@ -472,7 +587,7 @@ body{
 }
 
 .vid-info a{
-    color: #ffffff;
+    color: #e1dddd;
     text-decoration: none;
     overflow: hidden; 
     max-lines: 2;
@@ -480,6 +595,10 @@ body{
     -webkit-box-orient: vertical;  
     display: -webkit-box;  
     text-overflow: ellipsis;
+}
+
+.vid-info p{
+    color: #bfbfc3;
 }
 
 

@@ -13,19 +13,23 @@
     <nav class="flex-nav">
         <div class="nav-container">
             <div class="nav-logo flex-div">
-                <img src="../resources/menu.png" alt="menu" class="menu" id="menu">
-                <img src="../resources/logo.png" alt="fusion" class="logo">
+                <div class="menu" id="menu">
+                    <div>
+                        <span class="line_1"></span>
+                        <span class="line_2"></span>
+                        <span class="line_3"></span>
+                    </div>
+                </div>
+                <span class="logo">fusion</span>
             </div>
-
             <div class="nav-search">
-                <div class="search-box flex-div">
+                <div class="search-box">
                     <button type="button" class="search-button">
                         <img src="../resources/search.png" alt="search" class="search">
                     </button>
                     <input type="text" placeholder="Search" class="search-input">
                 </div>
             </div>
-
             <div class="nav-user flex-div">
                 <div class="theme-toggle">
                     <svg style="height: 2.5vh;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19.9001 2.30719C19.7392 1.8976 19.1616 1.8976 19.0007 2.30719L18.5703 3.40247C18.5212 3.52752 18.4226 3.62651 18.298 3.67583L17.2067 4.1078C16.7986 4.26934 16.7986 4.849 17.2067 5.01054L18.298 5.44252C18.4226 5.49184 18.5212 5.59082 18.5703 5.71587L19.0007 6.81115C19.1616 7.22074 19.7392 7.22074 19.9001 6.81116L20.3305 5.71587C20.3796 5.59082 20.4782 5.49184 20.6028 5.44252L21.6941 5.01054C22.1022 4.849 22.1022 4.26934 21.6941 4.1078L20.6028 3.67583C20.4782 3.62651 20.3796 3.52752 20.3305 3.40247L19.9001 2.30719Z" stroke="#ffffff"></path> <path d="M16.0328 8.12967C15.8718 7.72009 15.2943 7.72009 15.1333 8.12967L14.9764 8.52902C14.9273 8.65407 14.8287 8.75305 14.7041 8.80237L14.3062 8.95987C13.8981 9.12141 13.8981 9.70107 14.3062 9.86261L14.7041 10.0201C14.8287 10.0694 14.9273 10.1684 14.9764 10.2935L15.1333 10.6928C15.2943 11.1024 15.8718 11.1024 16.0328 10.6928L16.1897 10.2935C16.2388 10.1684 16.3374 10.0694 16.462 10.0201L16.8599 9.86261C17.268 9.70107 17.268 9.12141 16.8599 8.95987L16.462 8.80237C16.3374 8.75305 16.2388 8.65407 16.1897 8.52902L16.0328 8.12967Z" stroke="#ffffff"></path> <path opacity="0.5" d="M21.0672 11.8568L20.4253 11.469L21.0672 11.8568ZM12.1432 2.93276L11.7553 2.29085V2.29085L12.1432 2.93276ZM21.25 12C21.25 17.1086 17.1086 21.25 12 21.25V22.75C17.9371 22.75 22.75 17.9371 22.75 12H21.25ZM12 21.25C6.89137 21.25 2.75 17.1086 2.75 12H1.25C1.25 17.9371 6.06294 22.75 12 22.75V21.25ZM2.75 12C2.75 6.89137 6.89137 2.75 12 2.75V1.25C6.06294 1.25 1.25 6.06294 1.25 12H2.75ZM15.5 14.25C12.3244 14.25 9.75 11.6756 9.75 8.5H8.25C8.25 12.5041 11.4959 15.75 15.5 15.75V14.25ZM20.4253 11.469C19.4172 13.1373 17.5882 14.25 15.5 14.25V15.75C18.1349 15.75 20.4407 14.3439 21.7092 12.2447L20.4253 11.469ZM9.75 8.5C9.75 6.41182 10.8627 4.5828 12.531 3.57467L11.7553 2.29085C9.65609 3.5593 8.25 5.86509 8.25 8.5H9.75ZM12 2.75C11.9115 2.75 11.8077 2.71008 11.7324 2.63168C11.6686 2.56527 11.6538 2.50244 11.6503 2.47703C11.6461 2.44587 11.6482 2.35557 11.7553 2.29085L12.531 3.57467C13.0342 3.27065 13.196 2.71398 13.1368 2.27627C13.0754 1.82126 12.7166 1.25 12 1.25V2.75ZM21.7092 12.2447C21.6444 12.3518 21.5541 12.3539 21.523 12.3497C21.4976 12.3462 21.4347 12.3314 21.3683 12.2676C21.2899 12.1923 21.25 12.0885 21.25 12H22.75C22.75 11.2834 22.1787 10.9246 21.7237 10.8632C21.286 10.804 20.7293 10.9658 20.4253 11.469L21.7092 12.2447Z" fill="#ffffff"></path> </g></svg>
@@ -56,19 +60,15 @@
                 <svg class="user" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff9f"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>user-profile-filled</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="drop" fill="#ffffff9f" transform="translate(42.666667, 42.666667)"> <path d="M213.333333,3.55271368e-14 C269.912851,3.55271368e-14 324.175019,22.4761259 364.18278,62.4838867 C404.190541,102.491647 426.666667,156.753816 426.666667,213.333333 C426.666667,331.15408 331.15408,426.666667 213.333333,426.666667 C95.5125867,426.666667 2.84217094e-14,331.15408 2.84217094e-14,213.333333 C2.84217094e-14,95.5125867 95.5125867,3.55271368e-14 213.333333,3.55271368e-14 Z M234.666667,234.666667 L192,234.666667 C139.18529,234.666667 93.8415802,266.653822 74.285337,312.314895 C105.229171,355.70638 155.977088,384 213.333333,384 C270.689579,384 321.437496,355.70638 352.381644,312.31198 C332.825087,266.653822 287.481377,234.666667 234.666667,234.666667 L234.666667,234.666667 Z M213.333333,64 C177.987109,64 149.333333,92.653776 149.333333,128 C149.333333,163.346224 177.987109,192 213.333333,192 C248.679557,192 277.333333,163.346224 277.333333,128 C277.333333,92.653776 248.679557,64 213.333333,64 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
             </div>
         </div>
-
         <div class="border-bottom">
-
         </div>
     </nav>
 
     <!--------------------------------- SIDEBAR ------------------------------------->
     <div class="sidebar">
         <div class="shortcut-links">
-            <div class="sub-menu">
-                <img class="menu-sidebar" src="../resources/menu.png">
-            </div>
-            <ul>
+            <div class="br"></div>
+            <ul class="first__ul">
                 <li>
                     <a href="#">
                         <svg class="shortcut-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M4 9.5L.5 13H3v9h7v-6h4v6h7v-9h2.5L12 1.5l-4 4V3H4zM5 4h2v3.914l5-5L21.086 12H20v9h-5v-6H9v6H4v-9H2.914L5 9.914z"></path><path fill="none" d="M0 0h24v24H0z"></path></g></svg>
@@ -163,14 +163,61 @@
 
     <!--------------------------- Main ------------------------------->
     <div class="main-container">
-        <div class="banner"></div>
+        <div class="banner">
+            <button class="close__btn">
+                <div class="x__icon">
+                    <svg viewBox="0 0 16 16" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg8" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><metadata id="metadata5"><rdf:rdf><cc:work><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type><dc:title></dc:title><dc:date>2021</dc:date><dc:creator><cc:agent><dc:title>Timothée Giet</dc:title></cc:agent></dc:creator><cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/"></cc:license></cc:work><cc:license rdf:about="http://creativecommons.org/licenses/by-sa/4.0/"><cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"></cc:permits><cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"></cc:permits><cc:requires rdf:resource="http://creativecommons.org/ns#Notice"></cc:requires><cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"></cc:requires><cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"></cc:permits><cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike"></cc:requires></cc:license></rdf:rdf></metadata><rect transform="rotate(45)" ry="0" y="-1" x="4.3137083" height="2" width="14" id="rect1006" style="opacity:1;fill:#666666;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:3.20000005;stroke-opacity:1"></rect><rect transform="rotate(-45)" ry="0" y="10.313708" x="-7" height="2" width="14" id="rect1006-5" style="opacity:1;fill:#666666;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:3.20000005;stroke-opacity:1"></rect></g></svg>
+                </div>
+            </button>
+            <img src="../resources/banner.png" alt="banner">
+        </div>
 
         <div class="list-container">
             <div class="container-container">
                 <div class="vid-container">
                     <div class="vid-list">
+                        <a href="../play_video_1/play-video.html">
+                            <div class="img_container">
+                                <img class="thumbnail" src="../resources/heartsteel-band.png">
+                            </div>
+                        </a>         
+                        <div class="flex-vid">
+                            <img src="../resources/lol.png">
+                            <div class="vid-info">
+                                <a href="../play_video_1/play-video.html">HEARTSTEEL 2023: CONOCE A LA BANDA | Trailer oficial de aspectos</a>
+                                <p>League of Legends</p>
+                                <p>53k views 6 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-container">
+                <div class="vid-container">
+                    <div class="vid-list">
                         <a href="#">
-                            <img class="thumbnail" src="../resources/heartsteel-thumb.png">
+                            <div class="img_container">
+                                <img class="thumbnail" src="../resources/rumpleremix.png">
+                            </div>
+                        </a>         
+                        <div class="flex-vid">
+                            <img src="../resources/tft.png">
+                            <div class="vid-info">
+                                <a href="#">REMIX RUMBLE ft. Steve Aoki (Official Music Video) | Teamfight Tactics</a>
+                                <p>Teamfight Tactics</p>
+                                <p>22k views 3 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-container">
+                <div class="vid-container">
+                    <div class="vid-list">
+                        <a href="#">
+                            <div class="img_container">
+                                <img class="thumbnail" src="../resources/heartsteel-thumb.png">
+                            </div>
                         </a>         
                         <div class="flex-vid">
                             <img src="../resources/hearsteel.png">
@@ -187,31 +234,16 @@
                 <div class="vid-container">
                     <div class="vid-list">
                         <a href="#">
-                            <img class="thumbnail" src="../resources/truedamage-thumb.png">
-                        </a>         
-                        <div class="flex-vid">
-                            <img src="../resources/truedamage.png">
-                            <div class="vid-info">
-                                <a href="#">True Damage - GIANTS (ft. Becky G, Keke Palmer, SOYEON, DUCKWRTH, Thutmose)</a>
-                                <p>True Damage</p>
-                                <p>300k views 7 days</p>
+                            <div class="img_container">
+                                <img class="thumbnail" src="../resources/iso.png"> 
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-container">
-                <div class="vid-container">
-                    <div class="vid-list">
-                        <a href="#">
-                            <img class="thumbnail" src="../resources/iso.png">
                         </a>         
                         <div class="flex-vid">
                             <img src="../resources/valorant.png">
                             <div class="vid-info">
                                 <a href="#">MYTHS // Iso Agent Trailer - VALORANT</a>
                                 <p>Valorant</p>
-                                <p>300k views 7 days</p>
+                                <p>210k views 10 days</p>
                             </div>
                         </div>
                     </div>
@@ -221,14 +253,16 @@
                 <div class="vid-container">
                     <div class="vid-list">
                         <a href="#">
-                            <img class="thumbnail" src="../resources/cagematch.png">
+                            <div class="img_container">
+                                <img class="thumbnail" src="../resources/adidas_thumbail.png">
+                            </div>
                         </a>         
                         <div class="flex-vid">
-                            <img src="../resources/ign.png">
+                            <img src="../resources/adidas.png">
                             <div class="vid-info">
-                                <a href="#">Mortal Kombat Legends: Cage Match - Official Trailer (2023)</a>
+                                <a href="#">Take the Deal - Dare To Create</a>
                                 <p>IGN movie trailers</p>
-                                <p>300k views 7 days</p>
+                                <p>110k views 22 days</p>
                             </div>
                         </div>
                     </div>
@@ -238,14 +272,16 @@
                 <div class="vid-container">
                     <div class="vid-list">
                         <a href="#">
-                            <img class="thumbnail" src="../resources/shrek5.png">
+                            <div class="img_container">
+                                <img class="thumbnail" src="../resources/vampire_thumb.png">
+                            </div>
                         </a>         
                         <div class="flex-vid">
-                            <img src="../resources/dreamworks.png">
+                            <img src="../resources/xbox.png">
                             <div class="vid-info">
-                                <a href="#">Shrek 5 - Official Teaser Trailer</a>
-                                <p>Dreamworks</p>
-                                <p>300k views 7 days</p>
+                                <a href="#">Bloodlines 2 - Tremere Clan Reveal</a>
+                                <p>Xbox</p>
+                                <p>36k views 1 month</p>
                             </div>
                         </div>
                     </div>
@@ -255,7 +291,9 @@
                 <div class="vid-container">
                     <div class="vid-list">
                         <a href="#">
-                            <img class="thumbnail" src="../resources/synthwave.png">
+                            <div class="img_container">
+                                <img class="thumbnail" src="../resources/synthwave.png">
+                            </div>
                         </a>         
                         <div class="flex-vid">
                             <img src="../resources/synthtrooper.png">
@@ -268,28 +306,13 @@
                     </div>
                 </div>
             </div>
-            <div class="container-container">
-                <div class="vid-container">
-                    <div class="vid-list">
-                        <a href="../play_video_1/play-video.html">
-                            <img class="thumbnail" src="../resources/heartsteel-band.png">
-                        </a>         
-                        <div class="flex-vid">
-                            <img src="../resources/lol.png">
-                            <div class="vid-info">
-                                <a href="../play_video_1/play-video.html">HEARTSTEEL 2023: CONOCE A LA BANDA | Trailer oficial de aspectos</a>
-                                <p>League of Legends</p>
-                                <p>300k views 7 days</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="../container-container">
                 <div class="vid-container">
                     <div class="vid-list">
                         <a href="#">
-                            <img class="thumbnail" src="../resources/kurzgesagt.png">
+                            <div class="img_container">
+                                <img class="thumbnail" src="../resources/kurzgesagt.png">
+                            </div>
                         </a>         
                         <div class="flex-vid">
                             <img src="../resources/kurz.png">
@@ -306,12 +329,14 @@
                 <div class="vid-container">
                     <div class="vid-list">
                         <a href="#">
-                            <img class="thumbnail" src="../resources/vaporwave.png">
+                            <div class="img_container">
+                                <img class="thumbnail" src="../resources/vaporwave.png">
+                            </div>
                         </a>         
                         <div class="flex-vid">
                             <img src="../resources/aesthetic.png">
                             <div class="vid-info">
-                                <a href="#"><p>ｖａｐｏｒｗａｖｅｄｒｅａｍｓ　ゃ王ゑ</p></a>
+                                <a href="#">ｖａｐｏｒｗａｖｅｄｒｅａｍｓ　ゃ王ゑ</a>
                                 <p>Aesthetic</p>
                                 <p>300k views 7 days</p>
                             </div>
@@ -323,7 +348,9 @@
                 <div class="vid-container">
                     <div class="vid-list">
                         <a href="#">
-                            <img class="thumbnail" src="../resources/edgerunners.png">
+                            <div class="img_container">
+                                <img class="thumbnail" src="../resources/edgerunners.png">
+                            </div>
                         </a>         
                         <div class="flex-vid">
                             <img src="../resources/netflix.png">
