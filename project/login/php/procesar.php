@@ -19,7 +19,7 @@ if (isset($_POST['register'])) {
             $_SESSION['last_username'] = $username; // Guardamos el username en la variable de sesión
 
             echo "<script>alert('Ha ingresado correctamente')</script>";
-            echo "<script>window.location.href = '../main/index.html';</script>";
+            echo "<script>window.location.href = '../../main/html/index.html';</script>";
             exit();
         } else {
             echo "<script>alert('No se ha podido conectar.');</script>";
@@ -42,7 +42,7 @@ else if (isset($_POST['login'])) {
             // Usuario encontrado, inicia la sesión y redirige
             $_SESSION['last_username'] = $username;
             echo "<script>alert('Ha ingresado correctamente')</script>";
-            echo "<script>window.location.href = '../main/index.html';</script>";
+            echo "<script>window.location.href = '../../main/html/index.html';</script>";
             exit();
         } else {
             // Usuario no encontrado, muestra un mensaje de error
