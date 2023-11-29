@@ -40,8 +40,6 @@ const likeIcon = document.querySelector('.main__like')
 const likeClicked = document.querySelector('.stroke__clicked');
 const likeBlur = document.querySelector('.blur_btn');
 
-
-
 //theater mode
 theaterMode.addEventListener('click', () => {
     isTheaterModeActive = !isTheaterModeActive;
@@ -133,30 +131,6 @@ function enableCancelBtn(){
 }
 
 
-const hardcodedNickname = 'anon';
-
-function displayComments(){
-    commentLine.innerHTML = ''
-
-    comments.forEach((comment => {
-        const listItem = document.createElement('li')
-        listItem.textContent = comment
-        commentLine.appendChild(listItem)
-    }))
-}
-
-sendBtn.addEventListener('click', () => {
-    if(commentInput.value !== ''){
-        const newComment = `<span class='nickname'>${hardcodedNickname}:</span> ${commentInput.value}`;
-        comments.push(newComment) // Agregar el comentario al array
-        commentInput.value = '' // Limpiar el campo de entrada
-        displayComments(); // Actualizar la lista de comentarios
-    }
-    else{
-        alert('No se ha ingresado ningún comentario')
-    }
-})
-
 playBtn.addEventListener('click', () => {
     if (video.paused) {
         video.play();
@@ -224,14 +198,6 @@ volumeOnIcon.addEventListener('click', () => {
     volumeOnIcon.style.display = "none"
 })
 
-btns.addEventListener('mousemove', e => {
-    btns.forEach(btn => {
-        let rect = e.target.getBoundingClientRect()
-        let x = e.clientX - rect.left
-        btn.style.setProperty('--x', x + 'deg')
-    }) 
-})
-
 likeBtn.addEventListener('click', () => {
     console.log('like')
     if(likeBtn.clicked){
@@ -253,25 +219,25 @@ const fullscreenButton = document.querySelector('.screen__btn')
 
 function enterFullscreen(element) {
     if (element.requestFullscreen) {
-        element.requestFullscreen();
+        element.requestFullscreen()
     } else if (element.mozRequestFullScreen) {
-        element.mozRequestFullScreen();
+        element.mozRequestFullScreen()
     } else if (element.webkitRequestFullscreen) {
-        element.webkitRequestFullscreen();
+        element.webkitRequestFullscreen()
     } else if (element.msRequestFullscreen) {
-        element.msRequestFullscreen();
+        element.msRequestFullscreen()
     }
 }
 
 function exitFullscreen() {
     if (document.exitFullscreen) {
-        document.exitFullscreen();
+        document.exitFullscreen()
     } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
+        document.mozCancelFullScreen()
     } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
+        document.webkitExitFullscreen()
     } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
+        document.msExitFullscreen()
     }
 }
 
@@ -290,3 +256,48 @@ document.addEventListener('fullscreenchange', () => {
         // El modo de pantalla completa se ha desactivado
     }
 });
+
+function addComment(){
+    let commentValue = commentInput.value 
+    let lastUserName = "<?php echo isset($_SESSION['last_username]) ? $_SESSION['last_username'] : ''; ?>"
+
+    fetch('procesar_comentario.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `commentText=${encodeURIComponent(commentValue)}&lastUserName=${encodeURIComponent(lastUserName)}`,
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+    })
+    .catch(error => {
+        console.error('Error al enviar comentario:', error)
+    });
+}
+
+// ------------------------------------ Giphy api ---------------------------------------
+const apiKey = 'NDS5CN9hdW8ZbXnMnnd7iN1NLIJ1Vh1x'
+const videoTitle = 'Sett'
+
+const apiUrl = `https://api.giphy.com/v1/gifs/search?q=${videoTitle}&api_key=${apiKey}&limit=4`;
+
+fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      // Maneja los datos y muestra los GIFs en el contenedor
+      const gifsContainer = document.querySelector('.gifs_container');
+
+      data.data.forEach(gif => {
+        const gifUrl = gif.images.fixed_height.url;
+
+        // Crea elementos para mostrar los GIFs
+        const gifElement = document.createElement('img');
+        gifElement.src = gifUrl;
+
+        // Agrega los elementos al contenedor
+        gifsContainer.appendChild(gifElement);
+      });
+    })
+    .catch(error => console.error('Error al obtener GIFs de Giphy:', error));
