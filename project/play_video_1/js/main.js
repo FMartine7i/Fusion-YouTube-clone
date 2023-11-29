@@ -261,7 +261,7 @@ function addComment(){
     let commentValue = commentInput.value 
     let lastUserName = "<?php echo isset($_SESSION['last_username]) ? $_SESSION['last_username'] : ''; ?>"
 
-    fetch('procesar_comentario.php', {
+    fetch('../php/procesar_comentario.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
